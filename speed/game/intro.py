@@ -1,4 +1,4 @@
-class Score:
+class Intro:
     """A code template for a person who directs the game. The responsibility of 
     this class of objects is to control the sequence of play.
     
@@ -18,4 +18,4 @@ class Score:
         """The class constructor.
         
         Args:
-            self (Director): a"""
+            self (Director): a

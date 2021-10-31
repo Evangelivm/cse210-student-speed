@@ -1,8 +1,12 @@
 from time import sleep
 from game import constants
-from game.food import Food
+from game.input_word import InputWord
 from game.score import Score
-from game.snake import Snake
+import random
+from game.input_service import InputService
+from game.output_service import OutputService
+from game.random import Randomizer
+from asciimatics.screen import Screen
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
@@ -20,18 +24,21 @@ class Director:
         snake (Snake): The player or snake.
     """
 
-    def __init__(self, input_service, output_service):
+    def __init__(self):
         """The class constructor.
         
         Args:
             self (Director): an instance of Director.
         """
-        self._food = Food()
-        self._input_service = input_service
+        
+        self.input_service = InputService()
         self._keep_playing = True
-        self._output_service = output_service
+        self.output_service = OutputService()
+
+    def parameters (self):
         self._score = Score()
-        self._snake = Snake()
+        self._snake = Randomizer()
+        self._inputword = InputWord()
         
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -52,8 +59,21 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        direction = self._input_service.get_direction()
-        self._snake.move_head(direction)
+        def demo(self,screen):
+            self.choice_01 = []
+            self.x = []
+            number_x = 5
+            for x in range(number_x):
+                number_x = random.randint(1,60)
+                number_y = random.randint(2,10)
+                screen.print_at("----------------------------------------------------------------------------------------", 0, 1)
+                screen.print_at("----------------------------------------------------------------------------------------", 0, 15)
+                screen.print_at("Buffer: ", 0, 16)
+                screen.print_at(self.choice_01[x], number_x, number_y)
+                #dejarlo en 0.9
+                x = x + 1
+            screen.refresh()
+        Screen.wrapper(demo)
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 

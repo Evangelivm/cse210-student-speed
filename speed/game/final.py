@@ -2,9 +2,8 @@ from asciimatics.effects import Cycle, Stars
 from asciimatics.renderers import FigletText
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
-from asciimatics.widgets import text
-import random
-class OutputService:
+
+class Final:
     """A code template for a person who directs the game. The responsibility of 
     this class of objects is to control the sequence of play.
     
@@ -20,12 +19,22 @@ class OutputService:
         snake (Snake): The player or snake.
     """
 
-    def __init__(self):
+    def __init__(self, input_service, output_service):
         """The class constructor.
         
         Args:
             self (Director): a"""
-    def screen(self,screen):
-        self._screen = screen
-
-    
+    def doit(screen):
+        effects =[
+            Cycle(
+                screen,
+                FigletText("Thanks for playing",font="big"),
+                int(screen.height/2-8)),
+            Cycle(
+                screen,
+                FigletText("Close for exit",font="small"),
+                int(screen.height/2-0)),
+            Stars(screen,200)
+        ]
+        screen.play([Scene(effects,-1)])
+    Screen.wrapper(doit,catch_interrupt=True)
