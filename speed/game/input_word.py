@@ -1,3 +1,5 @@
+import time
+from threading import Thread
 class InputWord:
     """A code template for a person who directs the game. The responsibility of 
     this class of objects is to control the sequence of play.
@@ -14,8 +16,17 @@ class InputWord:
         snake (Snake): The player or snake.
     """
 
-    def __init__(self, input_service, output_service):
+    def __init__(self):
         """The class constructor.
         
         Args:
             self (Director): a"""
+    def input(self):
+        """answer = None
+        def check():
+            time.sleep(2)
+            if answer != None:
+                return
+            print("Too Slow, press enter")
+        Thread(target = check).start()"""
+        answer = input("Input something: ")

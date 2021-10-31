@@ -14,8 +14,11 @@ class Score:
         snake (Snake): The player or snake.
     """
 
-    def __init__(self, input_service, output_service):
+    def __init__(self):
         """The class constructor.
         
         Args:
             self (Director): a"""
+    def correct_answer(self, number):
+        score = 3 * number
+        return score
