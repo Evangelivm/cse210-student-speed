@@ -1,5 +1,6 @@
 import sys
 from asciimatics.event import KeyboardEvent
+from asciimatics.screen import Screen
 
 class InputService:
     """Detects player input. The responsibility of the class of objects is to detect player keypresses and translate them into a point representing a direction (or velocity).
@@ -18,7 +19,7 @@ class InputService:
         Args:
             self (InputService): An instance of InputService.
         """
-        self._screen = []
+        self.screen = Screen
         
     def get_letter(self):
         """Gets the letter that was typed. If the enter key was pressed returns an asterisk.
@@ -30,12 +31,8 @@ class InputService:
             string: The letter that was typed.
         """
         result = ""
-        event = self._screen.get_key()
+        event = Screen.get_key(Screen)
         if not event is None:
             if event == 27:
                 sys.exit()
-            elif event == 10: 
-                result = "*"
-            elif event >= 97 and event <= 122: 
-                result = chr(event)
         return result

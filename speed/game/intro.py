@@ -1,23 +1,27 @@
 class Intro:
-    """A code template for a person who directs the game. The responsibility of 
-    this class of objects is to control the sequence of play.
+    """This part is intended to show the first part of the game.
     
     Stereotype:
-        Controller
-
-    Attributes:
-        food (Food): The snake's target.
-        input_service (InputService): The input mechanism.
-        keep_playing (boolean): Whether or not the game can continue.
-        output_service (OutputService): The output mechanism.
-        score (Score): The current score.
-        snake (Snake): The player or snake.
+        Service Provider
     """
 
-    def __init__(self, input_service, output_service):
+    def __init__(self):
         """The class constructor.
         
         Args:
-            self (Director): a"""
-    def intro(self):
-        
+            self (Intro): an instance of Intro"""
+    def introduction(self):
+        string = f" .--.--.                                             \
+\n /  /    '. ,-.----.                            ,---, \
+\n|  :  /`. / \    /  \                         ,---.'| \
+\n;  |  |--`  |   :    |                        |   | : \
+\n|  :  ;_    |   | .\ :   ,---.     ,---.      |   | | \
+\n \  \    `. .   : |: |  /     \   /     \   ,--.__| | \
+\n  `----.   \|   |  \ : /    /  | /    /  | /   ,'   | \
+\n  __ \  \  ||   : .  |.    ' / |.    ' / |.   '  /  | \
+\n /  /`--'  /:     |`-''   ;   /|'   ;   /|'   ; |:  | \
+\n'--'.     / :   : :   '   |  / |'   |  / ||   | '/  ' \
+\n  `--'---'  |   | :   |   :    ||   :    ||   :    :| \
+\n            `---'.|    \   \  /  \   \  /  \   \  /   \
+\n              `---`     `----'    `----'    `----'    "
+        return print(string)

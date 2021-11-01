@@ -4,26 +4,17 @@ from asciimatics.scene import Scene
 from asciimatics.screen import Screen
 
 class Final:
-    """A code template for a person who directs the game. The responsibility of 
-    this class of objects is to control the sequence of play.
+    """This part is intended to show the final part of the game.
     
     Stereotype:
-        Controller
-
-    Attributes:
-        food (Food): The snake's target.
-        input_service (InputService): The input mechanism.
-        keep_playing (boolean): Whether or not the game can continue.
-        output_service (OutputService): The output mechanism.
-        score (Score): The current score.
-        snake (Snake): The player or snake.
+        Service Provider
     """
 
     def __init__(self, input_service, output_service):
         """The class constructor.
         
         Args:
-            self (Director): a"""
+            self (Final): an instance of Final"""
     def doit(screen):
         effects =[
             Cycle(
