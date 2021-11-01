@@ -26,6 +26,7 @@ class OutputService:
         Args:
             self (Director): a"""
     def screen(self,screen):
-        self._screen = screen
+        phrases = ['you did it', "great", "congrats", "good eye"]
+        return phrases
 
     

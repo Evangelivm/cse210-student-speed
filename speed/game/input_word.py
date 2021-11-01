@@ -22,11 +22,12 @@ class InputWord:
         Args:
             self (Director): a"""
     def input(self):
-        """answer = None
+        answer = None
         def check():
             time.sleep(2)
             if answer != None:
                 return
             print("Too Slow, press enter")
-        Thread(target = check).start()"""
+        Thread(target = check).start()
         answer = input("Input something: ")
+        return answer

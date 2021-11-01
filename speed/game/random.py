@@ -21,6 +21,8 @@ class Randomizer:
         
         Args:
             self (Director): a"""
+        self.word_list = []
+
     def word_extractor(self):
         PATH = os.path.dirname(os.path.abspath(__file__))
         LIBRARY = open(PATH + "/words.txt").read().splitlines()
@@ -29,4 +31,5 @@ class Randomizer:
         for x in range(5):
             one = random.choice(LIBRARY)
             choice_01.append(one)
+            self.word_list.append(one)
         return choice_01

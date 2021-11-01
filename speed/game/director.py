@@ -37,7 +37,9 @@ class Director:
         self._random = Randomizer()
         self._inputword = InputWord()
         self._score = Score()
-
+        self.points = 0
+        self.list = []
+        self.buffer = []
         
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -58,10 +60,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.list_01 = self._random.word_extractor()
-        self.buffer = []
+        self.list = self._random.word_extractor()
         def demo(screen):
-            choice_02 = self.list_01
+            choice_02 = self.list
             numbe_x = 5
             for x in range(numbe_x):
                 number_x = random.randint(1,60)
@@ -84,7 +85,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.answer = self._inputword.input()
+        
         
     def _do_outputs(self):
         """Outputs the important game information for each round of play. In 
@@ -94,13 +95,14 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        correct_list = self.list_01
-        correct_word = self.answer
-        correct_answers = 0
-        if correct_word in correct_list:
-            correct_word.append(self.answer)
-            correct_answers = correct_answers + 1
-            self._score.correct_answer(correct_answers)
+        self.input_service.get_letter()
+        self.answer = self._inputword.input()
+        list_02 = self.list 
+        self.points = 0
+        if self.answer in list_02:
+            self.buffer.append(self.answer)
+            self.points = self.points + 1
+            self._score.correct_answer(self.points)
         if self.answer == None:
             print("Come on, you can do it!!!!")
             sleep(2)

@@ -18,4 +18,6 @@ class Intro:
         """The class constructor.
         
         Args:
-            self (Director): a
+            self (Director): a"""
+    def intro(self):
+        
