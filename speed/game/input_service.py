@@ -3,14 +3,11 @@ from asciimatics.event import KeyboardEvent
 from asciimatics.screen import Screen
 
 class InputService:
-    """Detects player input. The responsibility of the class of objects is to detect player keypresses and translate them into a point representing a direction (or velocity).
-
+    """Helps with the final part to print when the user press ESC
     Stereotype: 
-        Service Provider
+        Service Provider"""
 
-    Attributes:
-        _screen (Screen): An Asciimatics screen.
-    """
+
 
     def __init__(self):
 
